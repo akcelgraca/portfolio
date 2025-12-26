@@ -1,32 +1,48 @@
 // src/app/data.ts
 
 export const profile = {
-  name: "Akcel Soares da Graça",
-  role: "Estudante de Eng. Informática | Full Stack Dev",
-  bio: "Apaixonado por código limpo, arquitetura de software e resolver problemas complexos.",
+  name: "Akcel Graça",
+  bio: "Motivated Informatics Engineering student at the University of Coimbra with a strong foundation in software development and data science. Experienced in building Java applications, distributed systems in C, and implementing Machine Learning pipelines in Python.",
   social: {
     github: "https://github.com/akcelgraca",
     linkedin: "https://www.linkedin.com/in/akcel-graça-84a948203/",
-    email: "akceldagraca@gmail.com"
+    email: "mailto:akceldagraca@gmail.com" 
   }
 };
 
 export const projects = [
   {
-    title: "Sistema de Gestão Escolar",
-    desc: "Plataforma web para gestão de notas e alunos usando arquitetura MVC.",
-    tech: ["Java", "Spring Boot", "PostgreSQL", "React"],
-    repo: "https://github.com/...",
-    demo: "https://demo-link..."
+    title: "Online Class & News Service",
+    desc: "Distributed Client-Server system in C for class management and real-time news broadcasting. Implements a hybrid architecture (TCP for control, UDP for administration, IP Multicast for streaming) and uses Pthreads for concurrent processing.",
+    tech: ["C", "TCP/UDP", "IP Multicast", "Pthreads", "Socket API"],
+    repo: "https://github.com/akcelgraca/Redes",
+    demo: null
   },
   {
-    title: "Algoritmo de Pathfinding",
-    desc: "Visualizador de algoritmos de busca (A*, Dijkstra) em tempo real.",
-    tech: ["Python", "PyGame", "Algoritmos"],
-    repo: "https://github.com/...",
-    demo: null // Projeto sem live demo
+    title: "Financial Management System (POOFS)",
+    desc: "Java-based application for invoice and client management following OOP principles. Includes complex logic for dynamic VAT calculation (variable rates by location) and architecture designed with UML.",
+    tech: ["Java", "OOP", "UML", "Design Patterns"],
+    repo: "https://github.com/akcelgraca/poofinancialservices",
+    demo: null
   },
-  // Adiciona mais projetos aqui
+  {
+    title: "Human Activity Recognition (HAR) Pipeline",
+    desc: "End-to-end Machine Learning pipeline to classify human activities (e.g., walking, sitting) using inertial sensor data. Includes Feature Engineering, PCA, and data balancing with SMOTE.",
+    tech: ["Python", "Scikit-Learn", "Pandas", "NumPy"],
+    repo: "https://github.com/akcelgraca/ECACficha1",
+    demo: null
+  }
 ];
 
-export const skills = ["JavaScript/TypeScript", "React", "Node.js", "C++", "SQL", "Git", "Docker"];
+export const skills = [
+  "C",
+  "Java", 
+  "Python", 
+  "Network Programming",
+  "SQL", 
+  "React", 
+  "Docker", 
+  "Linux", 
+  "Git",
+  "Scikit-Learn"
+];
