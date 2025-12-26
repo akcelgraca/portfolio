@@ -6,7 +6,7 @@ export default function Home() {
       
       {/* 1. HERO SECTION */}
       <section className="max-w-4xl mx-auto px-6 py-24 flex flex-col justify-center min-h-[60vh]">
-        <p className="text-teal-400 font-mono mb-4">Olá, o meu nome é</p>
+        <p className="text-teal-400 font-mono mb-4">Hello, my name is</p>
         <h1 className="text-5xl md:text-7xl font-bold text-slate-100 mb-6">{profile.name}.</h1>
         <h2 className="text-3xl md:text-5xl font-bold text-slate-400 mb-8">{(profile as any).role}</h2>
         <p className="max-w-xl text-slate-400 text-lg leading-relaxed mb-10">
@@ -25,7 +25,7 @@ export default function Home() {
       {/* 2. SKILLS SECTION */}
       <section className="max-w-4xl mx-auto px-6 py-16">
         <h3 className="text-2xl font-bold text-slate-100 mb-8 flex items-center">
-          <span className="text-teal-400 mr-2">01.</span> Tecnologias
+          <span className="text-teal-400 mr-2">01.</span> S K I L L S
         </h3>
         <ul className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {skills.map((skill) => (
@@ -39,7 +39,7 @@ export default function Home() {
       {/* 3. PROJECTS SECTION */}
       <section className="max-w-4xl mx-auto px-6 py-16 mb-20">
         <h3 className="text-2xl font-bold text-slate-100 mb-8 flex items-center">
-          <span className="text-teal-400 mr-2">02.</span> Projetos
+          <span className="text-teal-400 mr-2">02.</span> P R O J E C T S
         </h3>
         
         <div className="grid gap-8">
@@ -67,7 +67,7 @@ export default function Home() {
       
       {/* FOOTER */}
       <footer className="text-center py-8 text-slate-500 text-sm">
-        <p>Desenvolvido com Next.js & Tailwind CSS</p>
+        <p>Developed with Next.js & Tailwind CSS</p>
       </footer>
     </main>
   );
