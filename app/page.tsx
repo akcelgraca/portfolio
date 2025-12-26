@@ -8,7 +8,7 @@ export default function Home() {
       <section className="max-w-4xl mx-auto px-6 py-24 flex flex-col justify-center min-h-[60vh]">
         <p className="text-teal-400 font-mono mb-4">Olá, o meu nome é</p>
         <h1 className="text-5xl md:text-7xl font-bold text-slate-100 mb-6">{profile.name}.</h1>
-        <h2 className="text-3xl md:text-5xl font-bold text-slate-400 mb-8">{profile.role}</h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-slate-400 mb-8">{(profile as any).role}</h2>
         <p className="max-w-xl text-slate-400 text-lg leading-relaxed mb-10">
           {profile.bio}
         </p>
