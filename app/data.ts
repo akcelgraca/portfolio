@@ -1,7 +1,7 @@
 // src/app/data.ts
 
 export const profile = {
-  name: "Akcel Graça",
+  name: "Akcel da Graça",
   bio: "Motivated Informatics Engineering student at the University of Coimbra with a strong foundation in software development and data science. Experienced in building Java applications, distributed systems in C, and implementing Machine Learning pipelines in Python.",
   social: {
     github: "https://github.com/akcelgraca",
