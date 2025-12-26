@@ -1,65 +1,74 @@
-import Image from "next/image";
+import { profile, projects, skills } from './data';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+    <main className="min-h-screen bg-slate-900 text-slate-200 selection:bg-teal-500 selection:text-white">
+      
+      {/* 1. HERO SECTION */}
+      <section className="max-w-4xl mx-auto px-6 py-24 flex flex-col justify-center min-h-[60vh]">
+        <p className="text-teal-400 font-mono mb-4">Olá, o meu nome é</p>
+        <h1 className="text-5xl md:text-7xl font-bold text-slate-100 mb-6">{profile.name}.</h1>
+        <h2 className="text-3xl md:text-5xl font-bold text-slate-400 mb-8">{profile.role}</h2>
+        <p className="max-w-xl text-slate-400 text-lg leading-relaxed mb-10">
+          {profile.bio}
+        </p>
+        <div className="flex gap-4">
+          <a href={profile.social.github} target="_blank" className="px-6 py-3 border border-teal-400 text-teal-400 rounded hover:bg-teal-400/10 transition">
+            GitHub
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+          <a href={profile.social.linkedin} target="_blank" className="px-6 py-3 bg-teal-500 text-slate-900 font-bold rounded hover:bg-teal-400 transition">
+            LinkedIn
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* 2. SKILLS SECTION */}
+      <section className="max-w-4xl mx-auto px-6 py-16">
+        <h3 className="text-2xl font-bold text-slate-100 mb-8 flex items-center">
+          <span className="text-teal-400 mr-2">01.</span> Tecnologias
+        </h3>
+        <ul className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {skills.map((skill) => (
+            <li key={skill} className="flex items-center text-slate-400">
+              <span className="text-teal-400 mr-2">▹</span> {skill}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* 3. PROJECTS SECTION */}
+      <section className="max-w-4xl mx-auto px-6 py-16 mb-20">
+        <h3 className="text-2xl font-bold text-slate-100 mb-8 flex items-center">
+          <span className="text-teal-400 mr-2">02.</span> Projetos
+        </h3>
+        
+        <div className="grid gap-8">
+          {projects.map((proj, index) => (
+            <div key={index} className="bg-slate-800/50 p-8 rounded-lg hover:bg-slate-800 transition border border-slate-700 hover:border-teal-500/30 group">
+              <div className="flex justify-between items-start mb-4">
+                <h4 className="text-xl font-bold text-slate-100 group-hover:text-teal-400 transition">{proj.title}</h4>
+                <div className="flex gap-4 text-slate-400">
+                  {proj.repo && <a href={proj.repo} className="hover:text-teal-400">Code</a>}
+                  {proj.demo && <a href={proj.demo} className="hover:text-teal-400">Demo</a>}
+                </div>
+              </div>
+              <p className="text-slate-400 mb-6">{proj.desc}</p>
+              <ul className="flex flex-wrap gap-3">
+                {proj.tech.map((t) => (
+                  <li key={t} className="text-xs font-mono text-teal-400 bg-teal-400/10 px-2 py-1 rounded">
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+      
+      {/* FOOTER */}
+      <footer className="text-center py-8 text-slate-500 text-sm">
+        <p>Desenvolvido com Next.js & Tailwind CSS</p>
+      </footer>
+    </main>
   );
 }
