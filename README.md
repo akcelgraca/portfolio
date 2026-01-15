@@ -29,7 +29,7 @@ To test this project on your local machine:
 
 1.  Clone the repository:
     ```bash
-    git clone [https://github.com/akcelgraca/my-portfolio.git](https://github.com/akcelgraca/my-portfolio.git)
+    git clone https://github.com/akcelgraca/portfolio.git
     ```
 2.  Install dependencies:
     ```bash
