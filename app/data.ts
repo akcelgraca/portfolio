@@ -49,8 +49,13 @@ export const skills = [
   "Network Programming",
   "SQL", 
   "React", 
+  "PHP",
   "Docker", 
   "Linux", 
   "Git",
-  "Scikit-Learn"
+  "Tailwind CSS",
+  "Scikit-Learn",
+  "JavaScript",
+  "CSS",
+  "HTML"
 ];
