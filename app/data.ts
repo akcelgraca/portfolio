@@ -1,16 +1,23 @@
 // src/app/data.ts
 
 export const profile = {
-  name: "Akcel da Graça",
-  bio: "Motivated Informatics Engineering student at the University of Coimbra with a strong foundation in software development and data science. Experienced in building Java applications, distributed systems in C, and implementing Machine Learning pipelines in Python.",
+  name: "Akcel Graça",
+  bio: "Computer Engineering student at the University of Coimbra (graduating 2027) with a strong foundation in systems programming, full-stack development, and database engineering. Experienced in building high-concurrency architectures in C, full-stack applications in Java and React, machine learning pipelines in Python, and database-centric systems with PostgreSQL. Passionate about Cybersecurity — particularly Application Security and Cloud Security — and driven by the belief that understanding how systems are built is the first step to understanding how they can be broken.",
   social: {
     github: "https://github.com/akcelgraca",
     linkedin: "https://www.linkedin.com/in/akcel-graça-84a948203/",
-    email: "mailto:akceldagraca@gmail.com" 
+    email: "mailto:gracaakcel@gmail.com" 
   }
 };
 
 export const projects = [
+  { 
+    title: "Metro Mondego System",
+    desc: "Full-stack database-centric system for managing an urban transit network with PostgreSQL backend and Python REST API. Features ticket management, wallet top-ups, real-time trip scheduling, fare promotions, and admin analytics for the Coimbra metro system.",
+    tech: ["PostgreSQL", "Python", "REST API", "JWT", "Docker"],
+    repo: "https://github.com/akcelgraca/Data-Bases---Metro-Mondego-System",
+    demo: null
+  },
   { 
     title: "Hospital Emergency Simulator",
     desc: "Robust simulation of a hospital emergency service developed in C. Utilizes advanced IPC mechanisms (Named Pipes, Message Queues, Shared Memory) and synchronization (Mutexes, Condition Variables) to manage concurrent Patient, Triage, and Doctor processes in a Linux/POSIX environment.",
@@ -44,10 +51,12 @@ export const projects = [
 export const skills = [
   "C",
   "Java", 
+  "REST API", 
+  "JWT",
   "System Programming",
   "Python", 
   "Network Programming",
-  "SQL", 
+  "PostgreSQL", 
   "React", 
   "PHP",
   "Docker", 
