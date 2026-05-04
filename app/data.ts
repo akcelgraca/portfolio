@@ -2,6 +2,7 @@
 
 export const profile = {
   name: "Akcel Graça",
+  role: "Computer Engineering Student",
   bio: "Computer Engineering student at the University of Coimbra (graduating 2027) with a strong foundation in systems programming, full-stack development, and database engineering. Experienced in building high-concurrency architectures in C, full-stack applications in Java and React, machine learning pipelines in Python, and database-centric systems with PostgreSQL. Passionate about Cybersecurity — particularly Application Security and Cloud Security — and driven by the belief that understanding how systems are built is the first step to understanding how they can be broken.",
   social: {
     github: "https://github.com/akcelgraca",
