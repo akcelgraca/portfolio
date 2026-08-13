@@ -1,74 +1,194 @@
-import { profile, projects, skills } from './data';
+import Image from "next/image";
+import { profile, projects, toolkit } from "./data";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-900 text-slate-200 selection:bg-teal-500 selection:text-white">
-      
-      {/* 1. HERO SECTION */}
-      <section className="max-w-4xl mx-auto px-6 py-24 flex flex-col justify-center min-h-[60vh]">
-        <p className="text-teal-400 font-mono mb-4">Hello, my name is</p>
-        <h1 className="text-5xl md:text-7xl font-bold text-slate-100 mb-6">{profile.name}.</h1>
-        <h2 className="text-3xl md:text-5xl font-mono text-slate-400 mb-8">{profile.role}</h2>
-        <p className="max-w-xl text-slate-400 text-lg leading-relaxed mb-10">
-          {profile.bio}
-        </p>
-        <div className="flex gap-4">
-          <a href={profile.social.github} target="_blank" className="px-6 py-3 border border-teal-400 text-teal-400 rounded hover:bg-teal-400/10 transition">
-            GitHub
+    <>
+      <header className="masthead">
+        <div className="shell masthead-inner">
+          <a href="#top" className="monogram" aria-label="Akcel Graça — top of page">
+            AG
           </a>
-          <a href={profile.social.linkedin} target="_blank" className="px-6 py-3 bg-teal-500 text-slate-900 font-bold rounded hover:bg-teal-400 transition">
-            LinkedIn
-          </a>
+          <nav className="masthead-nav tag" aria-label="Sections">
+            <a className="masthead-link" href="#work">
+              Work
+            </a>
+            <a className="masthead-link" href="#toolkit">
+              Toolkit
+            </a>
+            <a className="masthead-link" href="#contact">
+              Contact
+            </a>
+          </nav>
         </div>
-      </section>
+      </header>
 
-      {/* 2. SKILLS SECTION */}
-      <section className="max-w-4xl mx-auto px-6 py-16">
-        <h3 className="text-2xl font-bold text-slate-100 mb-8 flex items-center">
-          <span className="text-teal-400 mr-2">01.</span> S K I L L S
-        </h3>
-        <ul className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {skills.map((skill) => (
-            <li key={skill} className="flex items-center text-slate-400">
-              <span className="text-teal-400 mr-2">▹</span> {skill}
-            </li>
-          ))}
-        </ul>
-      </section>
+      <main id="top">
+        {/* Hero ---------------------------------------------------------- */}
+        <section className="shell hero">
+          <div className="hero-column">
+            <p className="hero-eyebrow tag">
+              <span>{profile.role}</span>
+              <span className="dash" aria-hidden="true" />
+              <span>University of Coimbra, 2027</span>
+            </p>
 
-      {/* 3. PROJECTS SECTION */}
-      <section className="max-w-4xl mx-auto px-6 py-16 mb-20">
-        <h3 className="text-2xl font-bold text-slate-100 mb-8 flex items-center">
-          <span className="text-teal-400 mr-2">02.</span> P R O J E C T S
-        </h3>
-        
-        <div className="grid gap-8">
-          {projects.map((proj, index) => (
-            <div key={index} className="bg-slate-800/50 p-8 rounded-lg hover:bg-slate-800 transition border border-slate-700 hover:border-teal-500/30 group">
-              <div className="flex justify-between items-start mb-4">
-                <h4 className="text-xl font-bold text-slate-100 group-hover:text-teal-400 transition">{proj.title}</h4>
-                <div className="flex gap-4 text-slate-400">
-                  {proj.repo && <a href={proj.repo} className="hover:text-teal-400">Code</a>}
-                  {proj.demo && <a href={proj.demo} className="hover:text-teal-400">Demo</a>}
-                </div>
-              </div>
-              <p className="text-slate-400 mb-6">{proj.desc}</p>
-              <ul className="flex flex-wrap gap-3">
-                {proj.tech.map((t) => (
-                  <li key={t} className="text-xs font-mono text-teal-400 bg-teal-400/10 px-2 py-1 rounded">
-                    {t}
-                  </li>
-                ))}
-              </ul>
+            <h1 className="hero-name">
+              <span className="line">
+                <span>{profile.first}</span>
+              </span>
+              <span className="line">
+                <span>{profile.last}</span>
+              </span>
+            </h1>
+
+            <p className="hero-lead">{profile.lead}</p>
+
+            <div className="hero-actions">
+              <a className="button" href="#work">
+                See the work
+                <span className="arrow" aria-hidden="true">
+                  →
+                </span>
+              </a>
+              <a className="textlink" href={profile.social.github} target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+              <a
+                className="textlink"
+                href={profile.social.linkedin}
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
             </div>
-          ))}
+          </div>
+
+          <div className="plate">
+            <figure className="plate-figure">
+              <Image
+                src="/akcel.jpg"
+                alt={`Portrait of ${profile.name}`}
+                width={1100}
+                height={1320}
+                sizes="(min-width: 900px) 24rem, 100vw"
+                priority
+              />
+            </figure>
+            <p className="plate-caption tag">
+              <span>{profile.place}</span>
+              <span>{profile.coords}</span>
+            </p>
+          </div>
+        </section>
+
+        {/* Statement + about --------------------------------------------- */}
+        <section className="band" id="about">
+          <div className="shell band-inner">
+            <div>
+              <p className="band-tag tag">The idea I work from</p>
+              <blockquote className="band-quote">
+                Understanding how a system is built is the first step to{" "}
+                <em>understanding how it breaks.</em>
+              </blockquote>
+            </div>
+            <div className="band-about reveal">
+              {profile.about.map((para) => (
+                <p key={para.slice(0, 24)}>{para}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Work ----------------------------------------------------------- */}
+        <section className="slab" id="work">
+          <div className="shell">
+            <div className="slab-head">
+              <h2 className="heading">Selected work</h2>
+              <p className="tag">Five projects · systems, data and machine learning</p>
+            </div>
+
+            {projects.map((project) => (
+              <article className="entry reveal" key={project.title}>
+                <p className="entry-course tag">{project.course}</p>
+
+                <div>
+                  <h3 className="entry-title">
+                    <a
+                      className="entry-link"
+                      href={project.repo}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {project.title}
+                      <span className="arrow" aria-hidden="true">
+                        ↗
+                      </span>
+                    </a>
+                  </h3>
+                  <p className="entry-desc">{project.desc}</p>
+                </div>
+
+                <ul className="entry-tech tag">
+                  {project.tech.map((tech) => (
+                    <li key={tech}>{tech}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Toolkit -------------------------------------------------------- */}
+        <section className="slab slab-mist" id="toolkit">
+          <div className="shell">
+            <div className="slab-head">
+              <h2 className="heading">Toolkit</h2>
+              <p className="tag">What I reach for, by job</p>
+            </div>
+
+            <dl className="kit">
+              {toolkit.map((row) => (
+                <div className="kit-row reveal" key={row.group}>
+                  <dt className="tag">{row.group}</dt>
+                  <dd>
+                    {row.items.map((item) => (
+                      <span key={item}>{item}</span>
+                    ))}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
+        {/* Contact -------------------------------------------------------- */}
+        <section className="contact" id="contact">
+          <div className="shell">
+            <p className="tag">Open to internships and graduate roles</p>
+            <a className="contact-mail" href={`mailto:${profile.social.email}`}>
+              {profile.social.email}
+            </a>
+            <div className="contact-rail">
+              <a href={profile.social.github} target="_blank" rel="noreferrer">
+                GitHub ↗
+              </a>
+              <a href={profile.social.linkedin} target="_blank" rel="noreferrer">
+                LinkedIn ↗
+              </a>
+              <a href={`mailto:${profile.social.email}`}>Email ↗</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="colophon">
+        <div className="shell colophon-inner tag">
+          <span>© {new Date().getFullYear()} Akcel Graça</span>
+          <span>Set in Archivo, Newsreader and JetBrains Mono</span>
         </div>
-      </section>
-      
-      {/* FOOTER */}
-      <footer className="text-center py-8 text-slate-500 text-sm">
-        <p>Developed with Next.js & Tailwind CSS</p>
       </footer>
-    </main>
+    </>
   );
 }

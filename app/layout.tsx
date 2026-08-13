@@ -1,20 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Archivo, Newsreader, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const display = Archivo({
+  variable: "--font-display",
+  subsets: ["latin"],
+  axes: ["wdth"],
+});
+
+const body = Newsreader({
+  variable: "--font-body",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const mono = JetBrains_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Akcel",
-  description: "Portfolio of Akcel da Graça - Informatics Engineering Student at University of Coimbra",
+  title: "Akcel Graça — Computer engineering, Coimbra",
+  description:
+    "Computer engineering student at the University of Coimbra. Concurrent systems in C, database-backed services, and a growing focus on application and cloud security.",
 };
 
 export default function RootLayout({
@@ -24,11 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${display.variable} ${body.variable} ${mono.variable}`}>{children}</body>
     </html>
   );
 }

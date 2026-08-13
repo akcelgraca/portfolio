@@ -1,71 +1,70 @@
-// src/app/data.ts
-
 export const profile = {
   name: "Akcel Graça",
-  role: "Computer Engineering Student",
-  bio: "Computer Engineering student at the University of Coimbra (graduating 2027) with a strong foundation in systems programming, full-stack development, and database engineering. Experienced in building high-concurrency architectures in C, full-stack applications in Java and React, machine learning pipelines in Python, and database-centric systems with PostgreSQL. Passionate about Cybersecurity — particularly Application Security and Cloud Security — and driven by the belief that understanding how systems are built is the first step to understanding how they can be broken.",
+  first: "Akcel",
+  last: "Graça",
+  role: "Computer engineering student",
+  place: "Coimbra, Portugal",
+  coords: "40.2°N, 8.4°W",
+  lead:
+    "I build systems that run close to the machine — concurrent processes in C, database-backed services, and the security questions they raise.",
+  about: [
+    "I'm in my third year of Computer Engineering at the University of Coimbra, graduating in 2027. Most of what I've built so far lives underneath the interface: processes talking over pipes and sockets, schemas that have to stay correct under load, pipelines that turn sensor noise into a prediction.",
+    "That's also what pulls me toward security. You can't defend a system you can't take apart, so I spend my time on the taking-apart part — application security and cloud security in particular.",
+  ],
+  statement:
+    "Understanding how a system is built is the first step to understanding how it breaks.",
   social: {
     github: "https://github.com/akcelgraca",
     linkedin: "https://www.linkedin.com/in/akcel-graça-84a948203/",
-    email: "mailto:gracaakcel@gmail.com" 
-  }
+    email: "gracaakcel@gmail.com",
+  },
 };
 
 export const projects = [
-  { 
+  {
+    course: "Databases",
     title: "Metro Mondego System",
-    desc: "Full-stack database-centric system for managing an urban transit network with PostgreSQL backend and Python REST API. Features ticket management, wallet top-ups, real-time trip scheduling, fare promotions, and admin analytics for the Coimbra metro system.",
+    desc: "A transit network you can actually run: tickets, wallet top-ups, live trip scheduling, fare promotions and admin analytics, on a PostgreSQL core with a Python REST API in front of it.",
     tech: ["PostgreSQL", "Python", "REST API", "JWT", "Docker"],
     repo: "https://github.com/akcelgraca/Data-Bases---Metro-Mondego-System",
-    demo: null
   },
-  { 
+  {
+    course: "Operating systems",
     title: "Hospital Emergency Simulator",
-    desc: "Robust simulation of a hospital emergency service developed in C. Utilizes advanced IPC mechanisms (Named Pipes, Message Queues, Shared Memory) and synchronization (Mutexes, Condition Variables) to manage concurrent Patient, Triage, and Doctor processes in a Linux/POSIX environment.",
-    tech: ["C", "Linux/POSIX", "IPC", "Multithreading", "Shared Memory"],
-    repo: "https://github.com/akcelgraca/ProjetoUrgenciaSO", // ⚠️ Atualiza com o link para o repositório de Sistemas Operativos
-    demo: null
+    desc: "A hospital emergency service simulated in C, where patients, triage and doctors are separate processes. Named pipes, message queues and shared memory carry the traffic; mutexes and condition variables keep it honest.",
+    tech: ["C", "Linux / POSIX", "IPC", "Shared memory", "Multithreading"],
+    repo: "https://github.com/akcelgraca/ProjetoUrgenciaSO",
   },
   {
+    course: "Computer networks",
     title: "Online Class & News Service",
-    desc: "Distributed Client-Server system in C for class management and real-time news broadcasting. Implements a hybrid architecture (TCP for control, UDP for administration, IP Multicast for streaming) and uses Pthreads for concurrent processing.",
-    tech: ["C", "TCP/UDP", "IP Multicast", "Pthreads", "Socket API"],
+    desc: "A distributed client–server system in C that runs classes and broadcasts news in real time. TCP handles control, UDP handles administration, IP multicast handles the stream, and pthreads keep it all concurrent.",
+    tech: ["C", "TCP / UDP", "IP multicast", "Pthreads", "Sockets"],
     repo: "https://github.com/akcelgraca/Redes",
-    demo: null
   },
   {
-    title: "Financial Management System (POOFS)",
-    desc: "Java-based application for invoice and client management following OOP principles. Includes complex logic for dynamic VAT calculation (variable rates by location) and architecture designed with UML.",
-    tech: ["Java", "OOP", "UML", "Design Patterns"],
+    course: "Object-oriented programming",
+    title: "Financial Management System",
+    desc: "Invoice and client management in Java, designed from UML upward. The interesting part is the VAT engine — rates change by location and product type, so the rules had to stay separate from the objects that apply them.",
+    tech: ["Java", "OOP", "UML", "Design patterns"],
     repo: "https://github.com/akcelgraca/poofinancialservices",
-    demo: null
   },
   {
-    title: "Human Activity Recognition (HAR) Pipeline",
-    desc: "End-to-end Machine Learning pipeline to classify human activities (e.g., walking, sitting) using inertial sensor data. Includes Feature Engineering, PCA, and data balancing with SMOTE.",
+    course: "Machine learning",
+    title: "Human Activity Recognition",
+    desc: "An end-to-end pipeline that reads inertial sensor data and tells walking from sitting from climbing stairs. Feature engineering first, then PCA to cut the dimensions, then SMOTE to fix what the class balance broke.",
     tech: ["Python", "Scikit-Learn", "Pandas", "NumPy"],
     repo: "https://github.com/akcelgraca/ECACficha1",
-    demo: null
-  }
+  },
 ];
 
-export const skills = [
-  "C",
-  "Java", 
-  "REST API", 
-  "JWT",
-  "System Programming",
-  "Python", 
-  "Network Programming",
-  "PostgreSQL", 
-  "React", 
-  "PHP",
-  "Docker", 
-  "Linux", 
-  "Git",
-  "Tailwind CSS",
-  "Scikit-Learn",
-  "JavaScript",
-  "CSS",
-  "HTML"
+export const toolkit = [
+  { group: "Languages", items: ["C", "Java", "Python", "JavaScript", "PHP", "SQL"] },
+  {
+    group: "Systems",
+    items: ["Linux / POSIX", "IPC", "Pthreads", "Sockets", "TCP / UDP", "IP multicast"],
+  },
+  { group: "Data", items: ["PostgreSQL", "REST APIs", "JWT", "Scikit-Learn", "Pandas", "NumPy"] },
+  { group: "Web", items: ["React", "Next.js", "Tailwind CSS", "HTML", "CSS"] },
+  { group: "Tools", items: ["Git", "Docker", "UML"] },
 ];
