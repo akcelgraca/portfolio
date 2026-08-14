@@ -78,7 +78,6 @@ export default function Home() {
             </figure>
             <p className="plate-caption tag">
               <span>{profile.place}</span>
-              <span>{profile.coords}</span>
             </p>
           </div>
         </section>
@@ -186,7 +185,6 @@ export default function Home() {
       <footer className="colophon">
         <div className="shell colophon-inner tag">
           <span>© {new Date().getFullYear()} Akcel Graça</span>
-          <span>Set in Archivo, Newsreader and JetBrains Mono</span>
         </div>
       </footer>
     </>

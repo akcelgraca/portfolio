@@ -4,7 +4,6 @@ export const profile = {
   last: "Graça",
   role: "Computer engineering student",
   place: "Coimbra, Portugal",
-  coords: "40.2°N, 8.4°W",
   lead:
     "I build systems that run close to the machine — concurrent processes in C, database-backed services, and the security questions they raise.",
   about: [
