@@ -2,16 +2,16 @@ export const profile = {
   name: "Akcel Graça",
   first: "Akcel",
   last: "Graça",
-  role: "Computer engineering student",
+  role: "Full-stack developer",
   place: "Coimbra, Portugal",
   lead:
-    "I build systems that run close to the machine — concurrent processes in C, database-backed services, and the security questions they raise.",
+    "I work across the whole stack — the database underneath, the API in the middle, and the screens people actually tap. Most recently on iOS and Android.",
   about: [
-    "I'm in my third year of Computer Engineering at the University of Coimbra, graduating in 2027. Most of what I've built so far lives underneath the interface: processes talking over pipes and sockets, schemas that have to stay correct under load, pipelines that turn sensor noise into a prediction.",
-    "That's also what pulls me toward security. You can't defend a system you can't take apart, so I spend my time on the taking-apart part — application security and cloud security in particular.",
+    "I'm in my third year of Computer Engineering at the University of Coimbra, graduating in 2027. I build on both sides of the API: PostgreSQL schemas and REST services on one end, React and mobile screens on the other, and I move between them in the same afternoon.",
+    "The work below covers most of that range — a social fitness app shipping on iOS and Android, a transit system on a PostgreSQL core, concurrent services in C, and a machine-learning pipeline. Different layers, same habit: get the data model right, then make it feel obvious on screen.",
   ],
   statement:
-    "Understanding how a system is built is the first step to understanding how it breaks.",
+    "A feature isn't finished at the API. It's finished when someone taps it on their phone and it just works.",
   social: {
     github: "https://github.com/akcelgraca",
     linkedin: "https://www.linkedin.com/in/akcel-graça-84a948203/",
@@ -20,6 +20,13 @@ export const profile = {
 };
 
 export const projects = [
+  {
+    course: "Personal project",
+    title: "Cadence Club",
+    desc: "A social fitness app for iOS and Android: live GPS tracking with pace, splits and elevation, weekly training plans generated from each runner's goal, a community feed, and route building on Mapbox. Supabase carries auth, data and storage; activities sync to Apple Health and Health Connect, and queue on the device when the signal drops.",
+    tech: ["React Native", "Expo", "TypeScript", "Supabase", "Mapbox", "Zustand"],
+    repo: "",
+  },
   {
     course: "Databases",
     title: "Metro Mondego System",
@@ -58,12 +65,10 @@ export const projects = [
 ];
 
 export const toolkit = [
-  { group: "Languages", items: ["C", "Java", "Python", "JavaScript", "PHP", "SQL"] },
-  {
-    group: "Systems",
-    items: ["Linux / POSIX", "IPC", "Pthreads", "Sockets", "TCP / UDP", "IP multicast"],
-  },
-  { group: "Data", items: ["PostgreSQL", "REST APIs", "JWT", "Scikit-Learn", "Pandas", "NumPy"] },
-  { group: "Web", items: ["React", "Next.js", "Tailwind CSS", "HTML", "CSS"] },
-  { group: "Tools", items: ["Git", "Docker", "UML"] },
+  { group: "Front-end", items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS"] },
+  { group: "Mobile", items: ["React Native", "Expo", "Expo Router", "Mapbox"] },
+  { group: "Back-end", items: ["Python", "Java", "PHP", "REST APIs", "Supabase", "JWT"] },
+  { group: "Data", items: ["PostgreSQL", "SQL", "Pandas", "NumPy", "Scikit-Learn"] },
+  { group: "Systems", items: ["C", "Linux / POSIX", "IPC", "Pthreads", "Sockets", "TCP / UDP"] },
+  { group: "Tools", items: ["Git", "Docker", "Jest", "UML"] },
 ];

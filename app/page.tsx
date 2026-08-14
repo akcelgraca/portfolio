@@ -88,8 +88,8 @@ export default function Home() {
             <div>
               <p className="band-tag tag">The idea I work from</p>
               <blockquote className="band-quote">
-                Understanding how a system is built is the first step to{" "}
-                <em>understanding how it breaks.</em>
+                A feature isn&apos;t finished at the API. It&apos;s finished when someone taps it on
+                their phone and <em>it just works.</em>
               </blockquote>
             </div>
             <div className="band-about reveal">
@@ -105,7 +105,7 @@ export default function Home() {
           <div className="shell">
             <div className="slab-head">
               <h2 className="heading">Selected work</h2>
-              <p className="tag">Five projects · systems, data and machine learning</p>
+              <p className="tag">Six projects · from the data model to the screen</p>
             </div>
 
             {projects.map((project) => (
@@ -114,17 +114,21 @@ export default function Home() {
 
                 <div>
                   <h3 className="entry-title">
-                    <a
-                      className="entry-link"
-                      href={project.repo}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {project.title}
-                      <span className="arrow" aria-hidden="true">
-                        ↗
-                      </span>
-                    </a>
+                    {project.repo ? (
+                      <a
+                        className="entry-link"
+                        href={project.repo}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {project.title}
+                        <span className="arrow" aria-hidden="true">
+                          ↗
+                        </span>
+                      </a>
+                    ) : (
+                      project.title
+                    )}
                   </h3>
                   <p className="entry-desc">{project.desc}</p>
                 </div>

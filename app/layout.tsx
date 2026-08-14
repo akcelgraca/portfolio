@@ -21,7 +21,7 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Akcel Graça — Computer engineering, Coimbra",
   description:
-    "Computer engineering student at the University of Coimbra. Concurrent systems in C, database-backed services, and a growing focus on application and cloud security.",
+    "Full-stack developer and computer engineering student at the University of Coimbra. Cross-platform apps for iOS and Android, REST APIs, PostgreSQL and React.",
 };
 
 export default function RootLayout({
