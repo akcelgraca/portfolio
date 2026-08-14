@@ -25,6 +25,7 @@ export const projects = [
     title: "Cadence Club",
     desc: "A social fitness app for iOS and Android: live GPS tracking with pace, splits and elevation, weekly training plans generated from each runner's goal, a community feed, and route building on Mapbox. Supabase carries auth, data and storage; activities sync to Apple Health and Health Connect, and queue on the device when the signal drops.",
     tech: ["React Native", "Expo", "TypeScript", "Supabase", "Mapbox", "Zustand"],
+    // repositório privado — pôr o URL aqui quando ficar público
     repo: "",
   },
   {
@@ -39,7 +40,8 @@ export const projects = [
     title: "Hospital Emergency Simulator",
     desc: "A hospital emergency service simulated in C, where patients, triage and doctors are separate processes. Named pipes, message queues and shared memory carry the traffic; mutexes and condition variables keep it honest.",
     tech: ["C", "Linux / POSIX", "IPC", "Shared memory", "Multithreading"],
-    repo: "https://github.com/akcelgraca/ProjetoUrgenciaSO",
+    // repositório privado — pôr o URL aqui quando ficar público
+    repo: "",
   },
   {
     course: "Computer networks",
