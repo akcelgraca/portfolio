@@ -20,6 +20,20 @@ The primary purpose of this repository is to implement a modern **CI/CD (Continu
 * **Styling:** Tailwind CSS
 * **Language:** TypeScript
 * **Deployment:** Vercel
+* **Analytics:** PostHog
+
+## Analytics
+
+The site sends product analytics to PostHog. A client provider in `app/providers.tsx`
+initializes `posthog-js` and captures a `$pageview` on every route change.
+
+To point the site at a different project, set these environment variables (locally in
+`.env.local`, and in Vercel). Both default to this project on PostHog EU Cloud:
+
+```shell
+NEXT_PUBLIC_POSTHOG_KEY=<your_project_token>
+NEXT_PUBLIC_POSTHOG_HOST=https://eu.i.posthog.com
+```
 
 ---
 
