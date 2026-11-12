@@ -88,8 +88,8 @@ export default function Home() {
             <div>
               <p className="band-tag tag">The idea I work from</p>
               <blockquote className="band-quote">
-                A feature isn&apos;t finished at the API. It&apos;s finished when someone taps it on
-                their phone and <em>it just works.</em>
+                A feature is only finished when someone taps it on their phone and{" "}
+                <em>it just works.</em>
               </blockquote>
             </div>
             <div className="band-about reveal">

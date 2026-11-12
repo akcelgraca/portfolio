@@ -11,7 +11,7 @@ export const profile = {
     "The work below covers most of that range — a social fitness app shipping on iOS and Android, a transit system on a PostgreSQL core, concurrent services in C, and a machine-learning pipeline. Different layers, same habit: get the data model right, then make it feel obvious on screen.",
   ],
   statement:
-    "A feature isn't finished at the API. It's finished when someone taps it on their phone and it just works.",
+    "A feature is only finished when someone taps it on their phone and it just works.",
   social: {
     github: "https://github.com/akcelgraca",
     linkedin: "https://www.linkedin.com/in/akcel-graça-84a948203/",
