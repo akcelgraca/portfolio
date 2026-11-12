@@ -404,8 +404,18 @@ img {
   justify-content: space-between;
   gap: 0.75rem 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 2px solid var(--navy);
   margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.slab-head::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--navy);
 }
 
 .slab-head .tag {
@@ -681,12 +691,42 @@ img {
   animation: wipe 1s var(--ease) 0.2s both;
 }
 
-@supports (animation-timeline: view()) {
+/* Scroll reveals — .is-in chega por IntersectionObserver (reveal.tsx).
+   O estado escondido só existe com scripting ativo e sem reduced motion,
+   para que nada fique invisível sem JS. */
+
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
   .reveal {
-    animation: fade-up 0.7s var(--ease) both;
-    animation-timeline: view();
-    animation-range: entry 5% cover 22%;
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.7s var(--ease) var(--d, 0s),
+      transform 0.7s var(--ease) var(--d, 0s);
   }
+
+  .reveal-wipe {
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 0.9s var(--ease) var(--d, 0s);
+  }
+
+  .slab-head::after {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.9s var(--ease);
+  }
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-wipe.is-in {
+  clip-path: inset(0 0 0 0);
+}
+
+.slab-head.is-in::after {
+  transform: scaleX(1);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,9 +1,14 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import { profile, projects, toolkit } from "./data";
+import Reveal from "./reveal";
+
+const delay = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
 
 export default function Home() {
   return (
     <>
+      <Reveal />
       <header className="masthead">
         <div className="shell masthead-inner">
           <a href="#top" className="monogram" aria-label="Akcel Graça — top of page">
@@ -85,14 +90,14 @@ export default function Home() {
         {/* Statement + about --------------------------------------------- */}
         <section className="band" id="about">
           <div className="shell band-inner">
-            <div>
+            <div className="reveal">
               <p className="band-tag tag">The idea I work from</p>
               <blockquote className="band-quote">
                 A feature is only finished when someone taps it on their phone and{" "}
                 <em>it just works.</em>
               </blockquote>
             </div>
-            <div className="band-about reveal">
+            <div className="band-about reveal" style={delay(150)}>
               {profile.about.map((para) => (
                 <p key={para.slice(0, 24)}>{para}</p>
               ))}
@@ -152,8 +157,8 @@ export default function Home() {
             </div>
 
             <dl className="kit">
-              {toolkit.map((row) => (
-                <div className="kit-row reveal" key={row.group}>
+              {toolkit.map((row, index) => (
+                <div className="kit-row reveal" style={delay(index * 60)} key={row.group}>
                   <dt className="tag">{row.group}</dt>
                   <dd>
                     {row.items.map((item) => (
@@ -169,11 +174,15 @@ export default function Home() {
         {/* Contact -------------------------------------------------------- */}
         <section className="contact" id="contact">
           <div className="shell">
-            <p className="tag">Open to internships and graduate roles</p>
-            <a className="contact-mail" href={`mailto:${profile.social.email}`}>
+            <p className="tag reveal">Open to internships and graduate roles</p>
+            <a
+              className="contact-mail reveal-wipe"
+              style={delay(100)}
+              href={`mailto:${profile.social.email}`}
+            >
               {profile.social.email}
             </a>
-            <div className="contact-rail">
+            <div className="contact-rail reveal" style={delay(250)}>
               <a href={profile.social.github} target="_blank" rel="noreferrer">
                 GitHub ↗
               </a>
