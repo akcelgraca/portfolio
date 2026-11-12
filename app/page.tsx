@@ -4,7 +4,6 @@ import { profile, projects, toolkit } from "./data";
 import Reveal from "./reveal";
 
 const delay = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
-const cueDelay = (ms: number) => ({ "--cue-d": `${ms}ms` }) as CSSProperties;
 
 export default function Home() {
   return (
@@ -114,8 +113,8 @@ export default function Home() {
               <p className="tag">Six projects · from the data model to the screen</p>
             </div>
 
-            {projects.map((project, index) => (
-              <article className="entry reveal" style={cueDelay(index * 80)} key={project.title}>
+            {projects.map((project) => (
+              <article className="entry reveal" key={project.title}>
                 <p className="entry-course tag">{project.course}</p>
 
                 <div>
