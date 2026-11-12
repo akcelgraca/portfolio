@@ -267,14 +267,6 @@ img {
   background: var(--signal);
 }
 
-.button .arrow {
-  transition: transform 0.25s var(--ease);
-}
-
-.button:hover .arrow {
-  transform: translateX(4px);
-}
-
 .textlink {
   font-family: var(--font-mono), monospace;
   font-size: 0.72rem;
@@ -488,18 +480,12 @@ img {
 .entry-link .arrow {
   font-family: var(--font-mono), monospace;
   font-size: 0.8em;
-  transition: transform 0.3s var(--ease);
   display: inline-block;
 }
 
 .entry:hover .entry-link,
 .entry:focus-within .entry-link {
   color: var(--signal);
-}
-
-.entry:hover .entry-link .arrow,
-.entry:focus-within .entry-link .arrow {
-  transform: translate(4px, -4px);
 }
 
 .entry-desc {
