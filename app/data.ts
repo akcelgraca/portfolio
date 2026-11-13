@@ -25,8 +25,7 @@ export const projects = [
     title: "Cadence Club",
     desc: "A social fitness app for iOS and Android: live GPS tracking with pace, splits and elevation, weekly training plans generated from each runner's goal, a community feed, and route building on Mapbox. Supabase carries auth, data and storage; activities sync to Apple Health and Health Connect, and queue on the device when the signal drops.",
     tech: ["React Native", "Expo", "TypeScript", "Supabase", "Mapbox", "Zustand"],
-    // repositório privado — pôr o URL aqui quando ficar público
-    repo: "",
+    repo: "https://github.com/akcelgraca/cadence-club",
   },
   {
     course: "Databases",
